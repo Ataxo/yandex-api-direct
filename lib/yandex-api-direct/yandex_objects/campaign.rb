@@ -15,6 +15,16 @@ module YandexApiDirect
       end
     end
 
+    #get params for campaign
+    # input args:
+    # {
+    #   start_date: Date
+    #   end_date: Date
+    # }
+    def campaign_params
+      CampaignParam.find campaign_ids: [campaign_id]
+    end
+
     #get stats for campaign
     # input args:
     # {

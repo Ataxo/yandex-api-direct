@@ -15,9 +15,9 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "yandex-api-direct"
-  gem.homepage = "http://github.com/ondrejbartas/yandex-api-direct"
+  gem.homepage = "http://github.com/Ataxo/yandex-api-direct"
   gem.license = "MIT"
-  gem.summary = %Q{Accessing Yandex API and work with campaigns and statistics}
+  gem.summary = %Q{Accessing Yandex Direct API and work with campaigns and statistics}
   gem.description = %Q{Use JSON api on Yandex api side and automatically manages access token refresh}
   gem.email = "ondrej@bartas.cz"
   gem.authors = ["Ondrej Bartas"]

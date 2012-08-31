@@ -3,6 +3,7 @@ source "http://rubygems.org"
 #Oauth Doorman for getting access to oauth 2
 gem "oauth_doorman", :git => "https://github.com/Ataxo/oauth_doorman.git"
 gem "activesupport"
+gem "hashr"
 
 group :development do
   gem 'shoulda-context'
@@ -15,4 +16,5 @@ group :development do
   gem "simplecov"
   gem "sinatra"
   gem 'colorize'
+  gem "webmock"
 end

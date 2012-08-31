@@ -1,7 +1,9 @@
 # encoding: utf-8
 
+require 'active_support/inflector'
+require 'active_support/inflector/inflections'
 require 'active_support/core_ext/hash/keys'
-
+require 'hashr'
 
 module YandexApiDirect
 

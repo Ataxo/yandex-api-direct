@@ -55,6 +55,11 @@ class TestYandexObject < Test::Unit::TestCase
         should "camelize keys" do
           assert_equal @object.camelize_keys(@args_underscored), @args_camelized
         end
+
+        should "camelize keys only for Hash, Array return without update" do
+          assert_equal @object.camelize_keys(["test"]), ["test"]
+        end
+
       end
     end
 

@@ -114,6 +114,7 @@ module YandexApiDirect
       # Change Camelized keys of hash to camelized keys
       def camelize_keys(hash)
         return nil unless hash
+        return hash if hash.is_a?(Array)
         hash.inject({}){|result, (key, value)|
           new_key = key.to_s.camelize.gsub(/(Ids|Id|Fio)/) { |r| r.upcase }.to_sym
           new_value = case value

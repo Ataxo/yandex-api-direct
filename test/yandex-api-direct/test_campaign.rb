@@ -6,12 +6,17 @@ class TestCampaign < Test::Unit::TestCase
   context "Yandex Campaign" do
     setup do
       set_sandbox_access
+
+      # webmock get campaign list
+        stub_request(:post, "https://api-sandbox.direct.yandex.ru/json-api/v4/").
+            with(:body => "{\"method\":\"GetCampaignsList\",\"locale\":\"uk\",\"login\":\"\",\"application_id\":\"\",\"token\":\"\",\"param\":{}}",
+                 :headers => {'Accept'=>'*/*', 'Content-Type'=>'application/json', 'User-Agent'=>'Ruby'}).
+        to_return(:status => 200, :body => load_fixture("yandex_get_campaigns_list.json"))
+
     end
 
     context "find" do
       setup do 
-        stub_request(:post, "https://api-sandbox.direct.yandex.ru/json-api/v4/").
-          to_return(:status => 200, :body => load_fixture("yandex_get_campaigns_list.json"))
         @campaigns = YandexApiDirect::Campaign.find
       end
 

@@ -35,16 +35,16 @@ ENV['RACK_ENV'] = "test"
 
 class MissingConfigFile < Exception ; end
 
-def set_sandbox_access
-  YandexApiDirect.url "sandbox"
-end
-set_sandbox_access
+
+require "webmock/test_unit"
+
+# test models
+require 'models'
 
 def load_fixture name
   File.open(File.join(File.dirname(__FILE__), "fixtures", name), "r:UTF-8").read
 end
 
-# test models
-require 'models'
-
-require "webmock/test_unit"
+def set_sandbox_access
+  YandexApiDirect.url "sandbox"
+end

@@ -19,7 +19,7 @@ class TestCampaignParams < Test::Unit::TestCase
 
     context "find" do
       setup do 
-        @campaign_param = YandexApiDirect::CampaignParam.find campaign_id: 123451
+        @campaign_param = YandexApiDirect::CampaignParams.find campaign_id: 123451
       end
 
       should "have right attributes" do

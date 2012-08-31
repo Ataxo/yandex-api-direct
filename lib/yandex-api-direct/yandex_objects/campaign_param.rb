@@ -3,7 +3,7 @@ require 'net/http'
 require 'json'
 
 module YandexApiDirect
-  class CampaignParam < Hashr
+  class CampaignParams < Hashr
     
     include YandexObject
     extend YandexObject

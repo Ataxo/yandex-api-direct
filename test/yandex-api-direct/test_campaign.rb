@@ -54,7 +54,7 @@ class TestCampaign < Test::Unit::TestCase
         end
 
         should "have campaign params" do
-          assert @campaign.campaign_params.is_a?(YandexApiDirect::CampaignParam)
+          assert @campaign.campaign_params.is_a?(YandexApiDirect::CampaignParams)
         end
 
         should "have campaign stats" do

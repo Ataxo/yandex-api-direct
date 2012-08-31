@@ -22,7 +22,7 @@ module YandexApiDirect
     #   end_date: Date
     # }
     def campaign_params
-      CampaignParam.find campaign_ids: [campaign_id]
+      CampaignParams.find campaign_ids: [campaign_id]
     end
 
     #get stats for campaign

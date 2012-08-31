@@ -1,0 +1,103 @@
+{
+  "data": {
+    "ContextLimitSum": null,
+    "Status": "This campaign has been stopped",
+    "DisabledDomains": null,
+    "IsActive": "No",
+    "Login": "login",
+    "Strategy": {
+      "AveragePrice": null,
+      "StrategyName": "WeeklyBudget",
+      "MaxPrice": 0.12,
+      "WeeklySumLimit": 18,
+      "ClicksPerWeek": null
+    },
+    "AddRelevantPhrases": "No",
+    "TimeTarget": {
+      "TimeZone": "Europe/Moscow",
+      "DaysHours": [
+        {
+          "Hours": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "Days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "ShowOnHolidays": "Yes"
+    },
+    "StatusShow": "No",
+    "Sum": 40,
+    "StatusMetricaControl": "No",
+    "DisabledIps": null,
+    "AutoOptimization": "Yes",
+    "ManagerName": null,
+    "StatusActivating": "Yes",
+    "StatusContextStop": "No",
+    "AgencyName": null,
+    "ContextPricePercent": 100,
+    "RelevantPhrasesBudgetLimit": 100,
+    "Rest": 36.71,
+    "EmailNotification": {
+      "MoneyWarningValue": 20,
+      "SendAccNews": "Yes",
+      "WarnPlaceInterval": 60,
+      "SendWarn": "Yes",
+      "Email": "fridmanova@ataxo.com"
+    },
+    "StatusBehavior": "Yes",
+    "StatusArchive": "No",
+    "MinusKeywords": [
+
+    ],
+    "StatusOpenStat": "No",
+    "CampaignID": 123451,
+    "StartDate": "2008-12-16",
+    "ContextLimit": "Default",
+    "StatusModerate": "Yes",
+    "Clicks": 252,
+    "FIO": "Account name",
+    "Shows": 124343,
+    "ConsiderTimeTarget": "No",
+    "SumAvailableForTransfer": 23.71,
+    "SmsNotification": {
+      "MoneyInSms": "No",
+      "SmsTimeTo": "21:00",
+      "MoneyOutSms": "No",
+      "ModerateResultSms": "No",
+      "SmsTimeFrom": "09:00",
+      "MetricaSms": "No"
+    },
+    "Name": "Campaign #1"
+  }
+}

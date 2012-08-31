@@ -54,5 +54,5 @@ end
 
 #require yandex objects
 require 'yandex-api-direct/yandex_object'
-require 'yandex-api-direct/yandex_object/client'
-require 'yandex-api-direct/yandex_object/campaign'
+require 'yandex-api-direct/yandex_objects/client'
+require 'yandex-api-direct/yandex_objects/campaign'

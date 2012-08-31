@@ -1,0 +1,61 @@
+{"data":
+  [
+    {
+        "Rest":183.44,
+        "Status":"This campaign has been stopped",
+        "IsActive":"No",
+        "StatusArchive":"No",
+        "Login":"yand-10",
+        "CampaignID":123451,
+        "StatusShow":"No",
+        "StartDate":"2008-11-10",
+        "Sum":184,
+        "StatusModerate":"Yes",
+        "Clicks":7,
+        "Shows":29759,
+        "ManagerName":"",
+        "StatusActivating":"Yes",
+        "SumAvailableForTransfer":183.44,
+        "AgencyName":"",
+        "Name":"Campaign #1"
+    },
+   {
+        "Rest":0,
+        "Status":"The campaign is moved to the archive",
+        "IsActive":"No",
+        "StatusArchive":"Yes",
+        "Login":"yand-10",
+        "CampaignID":123452,
+        "StatusShow":"No",
+        "StartDate":"2008-12-02",
+        "Sum":87.77,
+        "StatusModerate":"Yes",
+        "Clicks":863,
+        "Shows":340558,
+        "ManagerName":"",
+        "StatusActivating":"Yes",
+        "SumAvailableForTransfer":0,
+        "AgencyName":"",
+        "Name":"Campaign #2"
+    },
+   {
+        "Rest":36.71,
+        "Status":"This campaign is running",
+        "IsActive":"yes",
+        "StatusArchive":"No",
+        "Login":"yand-10",
+        "CampaignID":123453,
+        "StatusShow":"No",
+        "StartDate":"2008-12-16",
+        "Sum":40,
+        "StatusModerate":"Yes",
+        "Clicks":52,
+        "Shows":26806,
+        "ManagerName":"",
+        "StatusActivating":"Yes",
+        "SumAvailableForTransfer":36.71,
+        "AgencyName":"",
+        "Name":"Campaign #3"
+    }
+  ]
+}

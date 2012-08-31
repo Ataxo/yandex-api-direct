@@ -1,0 +1,15 @@
+{"data":
+  [{"SendAccNews":"Yes",
+    "CampaignEmails":["test@email.com"],
+    "Discount":0,
+    "Login":"login",
+    "SmsPhone":"",
+    "Email":"test@email.com",
+    "Role":"Client",
+    "FIO":"Nam of client",
+    "DateCreate":"2008-11-10",
+    "StatusArch":"No",
+    "SendNews":"Yes",
+    "Phone":"",
+    "NonResident":"No",
+    "SendWarn":"Yes"}]}

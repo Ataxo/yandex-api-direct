@@ -28,5 +28,9 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'yandex-api-direct'
 
-class Test::Unit::TestCase
-end
+#Set test to use YML config
+require 'yaml'
+test_config = 'config/yandex_access.yml'
+class MissingConfigFile < Exception ; end
+raise MissingConfigFile, "Missing config file\n For testing please take #{test_config}.example and edit it to #{test_config} with your valid informations.\n Tests uses sandbox, will not do anythig to your existing data.\n Without config tests can't be started".red unless File.exists?(test_config)
+YandexApiDirect.config = YAML.load_file(test_config).symbolize_keys

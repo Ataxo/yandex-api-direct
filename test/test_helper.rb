@@ -43,8 +43,10 @@ end
 set_sandbox_access
 
 def load_fixture name
-  File.open(File.join(File.dirname(__FILE__), "fictures", name), "r:UTF-8").read
+  File.open(File.join(File.dirname(__FILE__), "fixtures", name), "r:UTF-8").read
 end
 
 # test models
 require 'models'
+
+require "webmock/test_unit"

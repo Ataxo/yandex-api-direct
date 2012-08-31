@@ -15,5 +15,15 @@ module YandexApiDirect
       end
     end
 
+    #get stats for campaign
+    # input args:
+    # {
+    #   start_date: Date
+    #   end_date: Date
+    # }
+    def campaign_stats args
+      CampaignStats.find args.merge(campaign_ids: [campaign_id])
+    end
+
   end
 end

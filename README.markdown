@@ -32,6 +32,21 @@ YandexApiDirect.config = {}
 Get application_id by registering your application at https://oauth.yandex.com/client/new
 (full doc at: http://api.yandex.com/oauth/doc/dg/tasks/register-client.xml)
 
+If you need to get Oauth token you will also need application password (also listed on registration page).
+
+
+## Sandbox/Production enviroments
+
+Yandex api allows you to use sandbox for testing purposes: [Yandex Sandbox](http://api.yandex.com/direct/doc/concepts/sandbox.xml)
+
+In your test helper write down
+``` ruby
+YandexApiDirect.url "sandbox" #or if you like symbols :sandbox  :-)
+#or for directly saying to use production
+YandexApiDirect.url "production" #or if you like symbols :production  :-)
+```
+This will set url of Yandex to sandbox or production.
+If you will not set url it will use ENV['RACK_ENV'] or ENV['RAILS_ENV'] == "test" it will use "sandbox" as default, all other environments (including development) will have sa default setted "production"
 
 ## Usage
 

@@ -15,7 +15,7 @@ doc
 
 Gemfile.lock
 
-config/*.yml
+config
 
 sandbox*
 

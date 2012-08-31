@@ -7,10 +7,14 @@ require 'hashr'
 
 module YandexApiDirect
 
+  URLS = {
+    production: "https://soap.direct.yandex.ru/json-api/v4/", #production url
+    sandbox: "https://api-sandbox.direct.yandex.ru/json-api/v4/" #sandbox url
+  }
   # Return current environment
   # Uses RACK_ENV and RAILS_ENV - if not set any default is used "development"
   def self.env
-    ENV['RACK_ENV'] || ENV['RAILS_ENV'] || "development"
+    ["test"].include?(ENV['RACK_ENV'] || ENV['RAILS_ENV'] || "development") ? :sandbox : :production
   end
 
   # Get URL for all requests to Yandex api
@@ -19,10 +23,13 @@ module YandexApiDirect
   # * * "test" - choose sandbox
   # * * other - choose production
   def self.url environment = nil
-    environment = env unless environment
-    environment == "test" ? 
-      "https://api-sandbox.direct.yandex.ru/json-api/v4/" : #sandbox url
-      "https://soap.direct.yandex.ru/json-api/v4/" #production url
+    if environment
+      @url = URLS[environment.to_sym]
+    elsif @url
+      @url
+    else
+      @url = URLS[env]
+    end
   end
 
   # default config for Yandex API

@@ -22,30 +22,15 @@ class TestYandexApiDirect < Test::Unit::TestCase
       assert_equal YandexApiDirect.url, "https://api-sandbox.direct.yandex.ru/json-api/v4/"
     end
 
-    should "be set to sandbox by ENV" do
-      ENV['RACK_ENV'] = "test"
+    should "be set to sandbox by param" do
+      YandexApiDirect.url "sandbox"
       assert_equal YandexApiDirect.url, "https://api-sandbox.direct.yandex.ru/json-api/v4/"
     end
 
-    should "be set to sandbox by param" do
-      assert_equal YandexApiDirect.url("test"), "https://api-sandbox.direct.yandex.ru/json-api/v4/"
-    end
-
-    should "be set to production by ENV" do
-      ENV['RACK_ENV'] = "development"
-      assert_equal YandexApiDirect.url, "https://soap.direct.yandex.ru/json-api/v4/"
-      ENV['RACK_ENV'] = "stage"
-      assert_equal YandexApiDirect.url, "https://soap.direct.yandex.ru/json-api/v4/"
-      ENV['RACK_ENV'] = "production"
+    should "be set to production by setting it to production" do
+      YandexApiDirect.url "production"
       assert_equal YandexApiDirect.url, "https://soap.direct.yandex.ru/json-api/v4/"
     end
-
-    should "be set to production by param" do
-      assert_equal YandexApiDirect.url("development"), "https://soap.direct.yandex.ru/json-api/v4/"
-      assert_equal YandexApiDirect.url("stage"), "https://soap.direct.yandex.ru/json-api/v4/"
-      assert_equal YandexApiDirect.url("production"), "https://soap.direct.yandex.ru/json-api/v4/"
-    end
-
 
   end
 end

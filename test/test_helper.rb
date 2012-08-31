@@ -36,9 +36,7 @@ ENV['RACK_ENV'] = "test"
 class MissingConfigFile < Exception ; end
 
 def set_sandbox_access
-  test_config = 'config/yandex_access.yml'
-  raise MissingConfigFile, "Missing config file\n For testing please take #{test_config}.example and edit it to #{test_config} with your valid informations.\n Tests uses sandbox, will not do anythig to your existing data.\n Without config tests can't be started".red unless File.exists?(test_config)
-  YandexApiDirect.config = YAML.load_file(test_config).symbolize_keys
+  YandexApiDirect.url "sandbox"
 end
 set_sandbox_access
 

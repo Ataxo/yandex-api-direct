@@ -1,0 +1,18 @@
+{
+   "data": 
+      {  
+         "Phone": "123456789",
+         "DateCreate": "2008-11-10",
+         "FIO": "Account name",
+         "Email": "test@email.com",
+         "Login": "test",
+         "StatusArch": "no",
+         "Discount": 1,
+         "SmsPhone": "",
+         "Role": "client",
+         "NonResident": "no",
+         "SendNews": "no",
+         "SendAccNews": "no",
+         "SendWarn": "no"
+      }
+}

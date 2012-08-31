@@ -61,6 +61,7 @@ end
 
 #require yandex objects
 require 'yandex-api-direct/yandex_object'
+require 'yandex-api-direct/yandex_objects/generic'
 require 'yandex-api-direct/yandex_objects/client'
 require 'yandex-api-direct/yandex_objects/campaign'
 require 'yandex-api-direct/yandex_objects/campaign_param'

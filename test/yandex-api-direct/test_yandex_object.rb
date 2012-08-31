@@ -12,24 +12,50 @@ class TestYandexObject < Test::Unit::TestCase
 
     context "initialization" do
       setup do
-        @args = {
-          foo: "bar",
-          :'BarFoo' => "foo bar"
+        @args_camelized = {
+          :'Foo'=> "bar",
+          :'BarFoo' => "foo bar",
+          :'Deep' => {
+            :'DarkSide' => "bar"
+          }
         }
-        @args_underscored = {
-          foo: "bar",
-          bar_foo: "foo bar" 
-        }
-        @object = TestingYandexObject.new @args
-      end
 
-      should "underscore keys" do
-        assert_equal @object.underscore_keys(@args), @args_underscored
+        @object = TestingYandexObject.new @args_camelized
       end
 
       should "have added methods for params" do
         assert_equal @object.foo, "bar"
         assert_equal @object.bar_foo, "foo bar"
+      end
+
+      context "change keys" do
+        setup do 
+          @args_underscored = {
+            foo: "bar",
+            bar_foo: "foo bar",
+            deep: {
+              dark_side: "bar"
+            }
+          }
+        end
+
+        should "take care about more ID characters Underscore" do
+          assert_equal @object.underscore_keys("CampaignID" => "foo"), {campaign_id: "foo" }
+          assert_equal @object.underscore_keys("FIO" => "foo"), {fio: "foo" }
+        end
+
+        should "take care about more ID characters Camelize" do
+          assert_equal @object.camelize_keys(campaign_id: "foo"), {:"CampaignID" => "foo"}
+          assert_equal @object.camelize_keys(fio: "foo"), {:"FIO" => "foo"}
+        end
+
+        should "underscore keys" do
+          assert_equal @object.underscore_keys(@args_camelized), @args_underscored
+        end
+    
+        should "camelize keys" do
+          assert_equal @object.camelize_keys(@args_underscored), @args_camelized
+        end
       end
     end
 

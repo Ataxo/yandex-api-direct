@@ -38,6 +38,7 @@ module YandexApiDirect
       
       # Change Camelized keys of hash to underscored keys
       def underscore_keys(hash)
+        return nil unless hash
         hash.inject({}){|result, (key, value)|
           new_key = key.to_s.underscore.to_sym
           new_value = case value
@@ -109,6 +110,21 @@ module YandexApiDirect
           raise YandexConnectionError, "Problem with connection to Yandex API, status code: #{response.code} \n content body: #{response.body}"
         end
       end
+
+      # Change Camelized keys of hash to camelized keys
+      def camelize_keys(hash)
+        return nil unless hash
+        hash.inject({}){|result, (key, value)|
+          new_key = key.to_s.camelize.gsub(/(Id|Fio)/) { |r| r.upcase }.to_sym
+          new_value = case value
+                      when Hash then camelize_keys(value)
+                      else value
+                      end
+          result[new_key] = new_value
+          result
+        }
+      end
     end
+
   end
 end

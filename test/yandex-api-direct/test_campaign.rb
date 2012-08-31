@@ -1,8 +1,6 @@
 # encoding: utf-8
 require 'test_helper'
 
-#require "webmock/test_unit"
-
 class TestCampaign < Test::Unit::TestCase
 
   context "Yandex Campaign" do

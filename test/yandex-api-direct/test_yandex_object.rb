@@ -1,7 +1,6 @@
 # encoding: utf-8
 require 'test_helper'
 
-require "webmock/test_unit"
 
 class TestYandexObject < Test::Unit::TestCase
 

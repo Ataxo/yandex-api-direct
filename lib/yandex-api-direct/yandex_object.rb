@@ -60,16 +60,14 @@ module YandexApiDirect
     module YandexObjectCallMethod
       #Call method perform call to yandex api
       # * method name (string|symbol) - method name defined by yandex api
-      # * param (optional) - params defined by yandex api
+      # * param — single-string array with user's login name
       def call_method method_name, param = nil
         payload = {
           method: method_name.camelize,
+          param: [YandexApiDirect.config[:login]],
           locale: YandexApiDirect.config[:locale],
-          login: YandexApiDirect.config[:login],
-          application_id: YandexApiDirect.config[:application_id],
-          token: YandexApiDirect.config[:access_token],
+          token: YandexApiDirect.config[:access_token]
         }
-        payload[:param] = param if param
 
         # get url
         url = URI.parse(YandexApiDirect.url)
